@@ -5,6 +5,7 @@ if(url.length > 0) {
 	var spreadsheet = new ej.spreadsheet.Spreadsheet({
 		allowOpen: true,
 		openUrl: 'https://services.syncfusion.com/js/production/api/spreadsheet/open',
+		saveUrl: 'https://services.syncfusion.com/js/production/api/spreadsheet/save',
 		created: function () {
 			fetch(url)
 				.then((response) => {
