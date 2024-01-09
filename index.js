@@ -1,17 +1,19 @@
 const urlParams = new URLSearchParams(window.location.search);
 const url = urlParams.get('url');
-ej.base.registerLicense('Mgo+DSMBaFt/QHNqVVhlXlpFdEBBXHxAd1p/VWJYdVt5flBPcDwsT3RfQF5jS39Rd0diXH9cc3NRTw==;Mgo+DSMBPh8sVXJ0S0V+XE9BdFRDX3xKf0x/TGpQb19xflBPallYVBYiSV9jS31TdERhWH1fdXRXQmFfVQ==;ORg4AjUWIQA/Gnt2VVhjQlFac11JXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxQdkdiW35ccXFVRGRfUU0=;MTExNDYyNEAzMjMwMmUzMzJlMzBKT3JsTUROWTkydURzU053eHhHQlc5dG8xMWk5N1QwQ0wrQ0tmczY5WUpZPQ==;MTExNDYyNUAzMjMwMmUzMzJlMzBXdU0ycFR0TzF3bU5zRlgwS2FuS29pMlI1Z1BMeVRtMlBJYkgwQ0lIKzZNPQ==;NRAiBiAaIQQuGjN/V0Z+X09EaFpAVmJLYVB3WmpQdldgdVRMZVVbQX9PIiBoS35RdUVhWH1fcnVQRmJZUEJy;MTExNDYyN0AzMjMwMmUzMzJlMzBNRUNkamV3Ti9mS1FFQ3N0ZS9Gb0ppczNtTWtnRm9LUGtKdWwwVnRmakdrPQ==;MTExNDYyOEAzMjMwMmUzMzJlMzBlbWMzdUR5SGlGdUhaelBEMGM0RlRkbGZyVW1IQUk4a3ZQRHJKM3hkYXlJPQ==;Mgo+DSMBMAY9C3t2VVhjQlFac11JXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxQdkdiW35ccXFVRGVVWE0=;MTExNDYzMEAzMjMwMmUzMzJlMzBacGxpT3Q1RVhKVC9CemRhVUxvK3dITEFBVFh6VVcvOUtUQ01SckR5VFpFPQ==;MTExNDYzMUAzMjMwMmUzMzJlMzBCSzJsUjdybUNHTFAvSXBhYS9uT3FabUdLRjl3KzNUY28vWFNyQTVTY000PQ==;MTExNDYzMkAzMjMwMmUzMzJlMzBNRUNkamV3Ti9mS1FFQ3N0ZS9Gb0ppczNtTWtnRm9LUGtKdWwwVnRmakdrPQ==');
-var spreadsheet = new ej.spreadsheet.Spreadsheet({
-    allowOpen: true,
-    openUrl: 'https://services.syncfusion.com/js/production/api/spreadsheet/open',
-	created: function () {
-		fetch(url)
-			.then((response) => {
-				response.blob().then((fileBlob) => {
-					var file = new File([fileBlob], "Sample.xlsx");
-					spreadsheet.open({ file: file });
+if(url.length > 0) {
+	ej.base.registerLicense('MzAyNjQxOUAzMjMxMmUzMTJlMzMzN1RtaEVIRjVodjUxTnJmRGROU0M1WWJFOGt4OWNEeFdiL2JIbEFQRWhOVlk9;MzAyNjQyMEAzMjMxMmUzMTJlMzMzN0NKck1WWTF1S2p0OVBuZ0hUdlRzSEVzeThjQXNGZy84T0g1YzJZbzhYL3M9;Mgo+DSMBaFt+QHFqVkFrXVNbdV5dVGpAd0N3RGlcdlR1fUUmHVdTRHRbQlxjQH5UdUdnX31deHc=;Mgo+DSMBPh8sVXJ1S0d+X1ZPd11dXmJWd1p/THNYflR1fV9DaUwxOX1dQl9nSX9Tf0VkWn1adnZQQmA=;ORg4AjUWIQA/Gnt2VFhhQlJDfV5AQmBIYVp/TGpJfl96cVxMZVVBJAtUQF1hTX5SdkxjXnxcdHJXQWBa;NRAiBiAaIQQuGjN/V0d+XU9HcVRDX3xKf0x/TGpQb19xflBPallYVBYiSV9jS3pTd0VqWXhdcnBTRGdcVw==;MzAyNjQyNUAzMjMxMmUzMTJlMzMzN1pBazRjSktNblVZVno3ejhMR0I2ZmVQVHk1Z0dXbUh3L2N4d200Mko2b2c9;MzAyNjQyNkAzMjMxMmUzMTJlMzMzN1oydUZwcmRnQlJnVGxpaTlCSmxQNHV2Vzh2dXNZeW5JS2FFNkpXZnZxVU09;Mgo+DSMBMAY9C3t2VFhhQlJDfV5AQmBIYVp/TGpJfl96cVxMZVVBJAtUQF1hTX5SdkxjXnxcdHJWQGRY;MzAyNjQyOEAzMjMxMmUzMTJlMzMzN0UzeXk1a0ZyaVBIUmRMR2VLTE5CdGN2VjFqKzJRMzhaNGxRTkt2ZzUxNlk9;MzAyNjQyOUAzMjMxMmUzMTJlMzMzN2IveEpVWnppQUpHSG9hNG5odUxWY0t4VUEyK1pXLzNmdUhoRXZqQytXcTA9;MzAyNjQzMEAzMjMxMmUzMTJlMzMzN1pBazRjSktNblVZVno3ejhMR0I2ZmVQVHk1Z0dXbUh3L2N4d200Mko2b2c9');
+	var spreadsheet = new ej.spreadsheet.Spreadsheet({
+		allowOpen: true,
+		openUrl: 'https://services.syncfusion.com/js/production/api/spreadsheet/open',
+		created: function () {
+			fetch(url)
+				.then((response) => {
+					response.blob().then((fileBlob) => {
+						var file = new File([fileBlob], "Sample.xlsx");
+						spreadsheet.open({ file: file });
+					})
 				})
-			})
-	}
-});
-spreadsheet.appendTo('#spreadsheet');
+		}
+	});
+	spreadsheet.appendTo('#spreadsheet');
+}
