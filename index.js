@@ -10,7 +10,7 @@ if(url.length > 0) {
 			fetch(url)
 				.then((response) => {
 					response.blob().then((fileBlob) => {
-						var file = new File([fileBlob], "Sample.xlsx");
+						var file = new File([fileBlob], "Report.xlsx");
 						spreadsheet.open({ file: file });
 					})
 				})
